@@ -40,11 +40,14 @@ python -m manim
 
 示例视频：
 
-https://github.com/ShortVideo-AI/manim-video-skill/blob/main/examples/smoke-test/GeneratedScene.mp4
+![Smoke test 预览](examples/smoke-test/GeneratedScene.gif)
+
+[打开 MP4 示例](examples/smoke-test/GeneratedScene.mp4)
 
 见 `examples/smoke-test/`：
 
 - `input_scene.py`：最小 Manim 场景
+- `GeneratedScene.gif`：README 中直接显示的 GIF 预览
 - `GeneratedScene.mp4`：示例渲染结果
 - `README.md`：英文复现命令和预期输出
 - `README.zh-CN.md`：中文复现命令和预期输出

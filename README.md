@@ -40,7 +40,9 @@ If your default `python` environment does not have Manim installed, pass a speci
 
 See `examples/smoke-test/` for a minimal scene, a sample rendered video, and the command used to verify the helper.
 
-https://github.com/ShortVideo-AI/manim-video-skill/blob/main/examples/smoke-test/GeneratedScene.mp4
+![Smoke test preview](examples/smoke-test/GeneratedScene.gif)
+
+[Open the MP4 sample](examples/smoke-test/GeneratedScene.mp4)
 
 ## Third-Party Content
 

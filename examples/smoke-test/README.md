@@ -46,6 +46,8 @@ A successful run returns JSON similar to:
 }
 ```
 
-The checked-in `GeneratedScene.mp4` is a small sample output rendered from `input_scene.py`.
+The checked-in `GeneratedScene.mp4` is a small sample output rendered from `input_scene.py`. `GeneratedScene.gif` is a lightweight preview for README pages.
 
-https://github.com/ShortVideo-AI/manim-video-skill/blob/main/examples/smoke-test/GeneratedScene.mp4
+![Smoke test preview](GeneratedScene.gif)
+
+[Open the MP4 sample](GeneratedScene.mp4)
