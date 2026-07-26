@@ -13,11 +13,15 @@ Skill for generating and rendering Manim math, educational, and explainer videos
 
 ## Install
 
-Clone or copy this repository into your Codex skills directory, then invoke it as `$manim-video`.
+Clone or copy this repository into a compatible skills directory, then invoke it as `$manim-video`.
+
+For Codex, that usually means:
 
 ```powershell
 git clone https://github.com/ShortVideo-AI/manim-video-skill.git ~/.codex/skills/manim-video-skill
 ```
+
+For opencode, OpenClaw, or another compatible agent runtime, place the folder in that runtime's skills directory.
 
 ## Requirements
 
@@ -35,6 +39,8 @@ If your default `python` environment does not have Manim installed, pass a speci
 ## Example
 
 See `examples/smoke-test/` for a minimal scene, a sample rendered video, and the command used to verify the helper.
+
+https://github.com/ShortVideo-AI/manim-video-skill/blob/main/examples/smoke-test/GeneratedScene.mp4
 
 ## Third-Party Content
 

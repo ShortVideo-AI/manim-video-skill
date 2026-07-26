@@ -47,3 +47,5 @@ python scripts/run_manim_script.py `
 ```
 
 本目录中的 `GeneratedScene.mp4` 是由 `input_scene.py` 渲染出的一个小体积示例视频。
+
+https://github.com/ShortVideo-AI/manim-video-skill/blob/main/examples/smoke-test/GeneratedScene.mp4

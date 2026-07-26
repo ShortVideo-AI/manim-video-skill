@@ -13,11 +13,15 @@
 
 ## 安装
 
-把这个仓库克隆或复制到你的 Codex skills 目录，然后用 `$manim-video` 调用。
+把这个仓库克隆或复制到兼容的 skills 目录，然后用 `$manim-video` 调用。
+
+如果是 Codex，通常可以放到：
 
 ```powershell
 git clone https://github.com/ShortVideo-AI/manim-video-skill.git ~/.codex/skills/manim-video-skill
 ```
+
+如果是 opencode、OpenClaw 或其他兼容的 agent 运行时，把这个目录放到对应运行时的 skills 目录即可。
 
 ## 环境要求
 
@@ -33,6 +37,10 @@ python -m manim
 如果默认 `python` 环境里没有安装 Manim，可以用 `--manim-command` 指定 Manim 可执行文件路径。
 
 ## 示例
+
+示例视频：
+
+https://github.com/ShortVideo-AI/manim-video-skill/blob/main/examples/smoke-test/GeneratedScene.mp4
 
 见 `examples/smoke-test/`：
 
