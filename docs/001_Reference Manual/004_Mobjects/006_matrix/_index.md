@@ -1,0 +1,107 @@
+---
+{
+  "title": "matrix",
+  "source_url": "https://docs.manim.community/en/stable/reference/manim.mobject.matrix.html",
+  "tree_path": [
+    "Reference Manual",
+    "Mobjects",
+    "matrix"
+  ],
+  "scraped_at": "2026-07-10T15:59:42"
+}
+---
+
+# matrix
+
+Mobjects representing matrices.
+
+Examples
+
+Example: MatrixExamples
+
+![../_images/MatrixExamples-1.png](https://docs.manim.community/en/stable/_images/MatrixExamples-1.png)
+
+```
+class MatrixExamples(Scene):
+    def construct(self):
+        m0 = Matrix([["\\pi", 0], [-1, 1]])
+        m1 = IntegerMatrix([[1.5, 0.], [12, -1.3]],
+            left_bracket="(",
+            right_bracket=")")
+        m2 = DecimalMatrix(
+            [[3.456, 2.122], [33.2244, 12.33]],
+            element_to_mobject_config={"num_decimal_places": 2},
+            left_bracket=r"\{",
+            right_bracket=r"\}")
+        m3 = MobjectMatrix(
+            [[Circle().scale(0.3), Square().scale(0.3)],
+            [MathTex("\\pi").scale(2), Star().scale(0.3)]],
+            left_bracket="\\langle",
+            right_bracket="\\rangle")
+        g = Group(m0, m1, m2, m3).arrange_in_grid(buff=2)
+        self.add(g)
+```
+
+Classes
+
+| Name | Description |
+| --- | --- |
+| [`DecimalMatrix`](https://docs.manim.community/en/stable/reference/manim.mobject.matrix.DecimalMatrix.html) | A mobject that displays a matrix with decimal entries on the screen. |
+| [`IntegerMatrix`](https://docs.manim.community/en/stable/reference/manim.mobject.matrix.IntegerMatrix.html) | A mobject that displays a matrix with integer entries on the screen. |
+| [`Matrix`](https://docs.manim.community/en/stable/reference/manim.mobject.matrix.Matrix.html) | A mobject that displays a matrix on the screen. |
+| [`MobjectMatrix`](https://docs.manim.community/en/stable/reference/manim.mobject.matrix.MobjectMatrix.html) | A mobject that displays a matrix of mobject entries on the screen. |
+
+Functions
+
+get\_det\_text(*matrix*, *determinant=None*, *background\_rect=False*, *initial\_scale\_factor=2*)[[source]](https://docs.manim.community/en/stable/_modules/manim/mobject/matrix.html)
+:   Helper function to create determinant.
+
+    Parameters:
+    :   - **matrix** ([*Matrix*](https://docs.manim.community/en/stable/reference/manim.mobject.matrix.Matrix.html)) – The matrix whose determinant is to be created
+        - **determinant** (*int* *|* *str* *|* *None*) – The value of the determinant of the matrix
+        - **background\_rect** (*bool*) – The background rectangle
+        - **initial\_scale\_factor** (*float*) – The scale of the text det w.r.t the matrix
+
+    Returns:
+    :   A VGroup containing the determinant
+
+    Return type:
+    :   [`VGroup`](https://docs.manim.community/en/stable/reference/manim.mobject.types.vectorized_mobject.VGroup.html)
+
+    Examples
+
+    Example: DeterminantOfAMatrix
+
+    ![../_images/DeterminantOfAMatrix-1.png](https://docs.manim.community/en/stable/_images/DeterminantOfAMatrix-1.png)
+
+    ```
+    class DeterminantOfAMatrix(Scene):
+        def construct(self):
+            matrix = Matrix([
+                [2, 0],
+                [-1, 1]
+            ])
+
+            # scaling down the `det` string
+            det = get_det_text(matrix,
+                        determinant=3,
+                        initial_scale_factor=1)
+
+            # must add the matrix
+            self.add(matrix)
+            self.add(det)
+    ```
+
+matrix\_to\_mobject(*matrix*)[[source]](https://docs.manim.community/en/stable/_modules/manim/mobject/matrix.html)
+:   Parameters:
+    :   **matrix** (*ndarray*)
+
+    Return type:
+    :   [*MathTex*](https://docs.manim.community/en/stable/reference/manim.mobject.text.tex_mobject.MathTex.html)
+
+matrix\_to\_tex\_string(*matrix*)[[source]](https://docs.manim.community/en/stable/_modules/manim/mobject/matrix.html)
+:   Parameters:
+    :   **matrix** (*ndarray*)
+
+    Return type:
+    :   str

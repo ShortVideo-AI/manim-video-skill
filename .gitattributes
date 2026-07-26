@@ -1,0 +1,4 @@
+* text=auto
+
+# Bundled generated reference docs are useful skill data, not primary source code.
+docs/** linguist-generated=true

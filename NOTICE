@@ -1,0 +1,17 @@
+Manim Video Skill
+
+This repository includes bundled third-party documentation:
+
+- Path: docs/
+- Source: Manim Community documentation
+- Version: v0.20.1
+- Source project: https://github.com/ManimCommunity/manim
+- Documentation site: https://docs.manim.community/en/stable/
+- Generated with: build_docs/crawl_manim_reference.py
+
+The Manim Community repository includes an MIT license notice with copyright by
+3Blue1Brown LLC.
+
+The generated docs/ files are included only to provide local API reference
+material for this skill. Copyright and license terms for Manim Community and
+its documentation remain with their respective authors.

@@ -1,0 +1,122 @@
+---
+{
+  "title": "text_mobject",
+  "source_url": "https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.html",
+  "tree_path": [
+    "Reference Manual",
+    "Mobjects",
+    "text",
+    "text_mobject"
+  ],
+  "scraped_at": "2026-07-10T16:00:08"
+}
+---
+
+# text\_mobject
+
+Mobjects used for displaying (non-LaTeX) text.
+
+Note
+
+Just as you can use [`Tex`](https://docs.manim.community/en/stable/reference/manim.mobject.text.tex_mobject.Tex.html) and [`MathTex`](https://docs.manim.community/en/stable/reference/manim.mobject.text.tex_mobject.MathTex.html) (from the module [`tex_mobject`](https://docs.manim.community/en/stable/reference/manim.mobject.text.tex_mobject.html))
+to insert LaTeX to your videos, you can use [`Text`](https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.Text.html) to to add normal text.
+
+Important
+
+See the corresponding tutorial [Text Without LaTeX](https://docs.manim.community/en/stable/guides/using_text.html), especially for information about fonts.
+
+The simplest way to add text to your animations is to use the [`Text`](https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.Text.html) class. It uses the Pango library to render text.
+With Pango, you are also able to render non-English alphabets like 你好 or こんにちは or 안녕하세요 or مرحبا بالعالم.
+
+Examples
+
+Example: HelloWorld
+
+![../_images/HelloWorld-2.png](https://docs.manim.community/en/stable/_images/HelloWorld-2.png)
+
+```
+class HelloWorld(Scene):
+    def construct(self):
+        text = Text('Hello world').scale(3)
+        self.add(text)
+```
+
+Example: TextAlignment
+
+![../_images/TextAlignment-1.png](https://docs.manim.community/en/stable/_images/TextAlignment-1.png)
+
+```
+class TextAlignment(Scene):
+    def construct(self):
+        title = Text("K-means clustering and Logistic Regression", color=WHITE)
+        title.scale(0.75)
+        self.add(title.to_edge(UP))
+
+        t1 = Text("1. Measuring").set_color(WHITE)
+
+        t2 = Text("2. Clustering").set_color(WHITE)
+
+        t3 = Text("3. Regression").set_color(WHITE)
+
+        t4 = Text("4. Prediction").set_color(WHITE)
+
+        x = VGroup(t1, t2, t3, t4).arrange(direction=DOWN, aligned_edge=LEFT).scale(0.7).next_to(ORIGIN,DR)
+        x.set_opacity(0.5)
+        x.submobjects[1].set_opacity(1)
+        self.add(x)
+```
+
+Classes
+
+| Name | Description |
+| --- | --- |
+| [`MarkupText`](https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.MarkupText.html) | Display (non-LaTeX) text rendered using [Pango](https://pango.org/). |
+| [`Paragraph`](https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.Paragraph.html) | Display a paragraph of text. |
+| [`Text`](https://docs.manim.community/en/stable/reference/manim.mobject.text.text_mobject.Text.html) | Display (non-LaTeX) text rendered using [Pango](https://pango.org/). |
+
+Functions
+
+register\_font(*font\_file*)[[source]](https://docs.manim.community/en/stable/_modules/manim/mobject/text/text_mobject.html)
+:   Temporarily add a font file to Pango’s search path.
+
+    This searches for the font\_file at various places. The order it searches it described below.
+
+    1. Absolute path.
+    2. In `assets/fonts` folder.
+    3. In `font/` folder.
+    4. In the same directory.
+
+    Parameters:
+    :   **font\_file** (*str* *|* *Path*) – The font file to add.
+
+    Return type:
+    :   *Iterator*[None]
+
+    Examples
+
+    Use `with register_font(...)` to add a font file to search
+    path.
+
+    Raises:
+    :   - **FileNotFoundError:** – If the font doesn’t exists.
+        - **AttributeError:** – If this method is used on macOS.
+        - **.. important ::** – This method is available for macOS for `ManimPango>=v0.2.3`. Using this
+          method with previous releases will raise an `AttributeError` on macOS.
+
+    Parameters:
+    :   **font\_file** (*str* *|* *Path*)
+
+    Return type:
+    :   *Iterator*[None]
+
+remove\_invisible\_chars(*mobject*)[[source]](https://docs.manim.community/en/stable/_modules/manim/mobject/text/text_mobject.html)
+:   Function to remove unwanted invisible characters from some mobjects.
+
+    Parameters:
+    :   **mobject** ([*VMobject*](https://docs.manim.community/en/stable/reference/manim.mobject.types.vectorized_mobject.VMobject.html)) – Any SVGMobject from which we want to remove unwanted invisible characters.
+
+    Returns:
+    :   The SVGMobject without unwanted invisible characters.
+
+    Return type:
+    :   [`SVGMobject`](https://docs.manim.community/en/stable/reference/manim.mobject.svg.svg_mobject.SVGMobject.html)
